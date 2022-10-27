@@ -63,7 +63,7 @@ ul li::before {
 }
 
 ul li::after {
-    content: "";
+    content: " ";
     position: absolute;
     top: -40px;
     left: 0;
