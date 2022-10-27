@@ -12,13 +12,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /*Единица vh соответствует 1% от высоты области просмотра браузера, таким образом, 100vh равно всей высоте области просмотра. */
+    min-height: 100vh;
+    /*Единица vh соответствует 1% от высоты области просмотра браузера, таким образом, 100vh равно всей высоте области просмотра. */
     background: linear-gradient(to bottom right, #162947, #0c1628)
 }
 
 ul {
     position: relative;
-    transform: skewY(-15deg) /*Единица deg - определяет угол в градусах. */
+    transform: skewY(-15deg)
+        /*Единица deg - определяет угол в градусах. */
 }
 
 
@@ -29,7 +31,8 @@ ul li {
     background: #0f4382;
     padding: 15px;
     z-index: var(--i);
-    transition: .5s /*Устанавливает эффект перехода между двумя состояниями элемента*/
+    transition: .5s
+        /*Устанавливает эффект перехода между двумя состояниями элемента*/
 }
 
 ul li:hover {
