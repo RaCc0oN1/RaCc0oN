@@ -111,6 +111,7 @@ ul li:last-child::after {
     box-shadow: -100px 100px 20px rgb(10, 10, 10, .25)
 }
 
+
 /*
 .scan {
     position: absolute;
