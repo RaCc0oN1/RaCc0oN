@@ -23,7 +23,7 @@ ul {
         /*Единица deg - определяет угол в градусах. */
 }
 
-img {
+ul img {
     position: absolute;
     top: 5;
     left: -35px;
