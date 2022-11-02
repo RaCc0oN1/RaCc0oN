@@ -29,7 +29,7 @@ img {
     left: -35px;
     width: 30px;
     height: 70%;
-/*    --background: #0c3669; -- Почему тут не нужна данная строчка  */
+/*    --background: #0c3669; -- Почему тут не нужна данная строчка? */
     transform-origin: right;
     transform: skewY(45deg);
 
