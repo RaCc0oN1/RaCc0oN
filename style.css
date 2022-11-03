@@ -27,17 +27,17 @@ body {
 ul {
     position: relative;
     transform: skewY(-15deg)
-        /*Единица deg - определяет угол в градусах. */
+        /*        Единица deg - определяет угол в градусах.*/
 }
 
 ul li img {
     position: absolute;
     top: 5px;
     left: -35px;
-/*    bottom: 10px;*/
+    bottom: 10px;
     width: 30px;
     height: 70%;
-    /*    --background: #0c3669; -- Почему тут не нужна данная строчка? */
+    /*    --background: #0c3669; -- Почему тут не нужна данная строчка?*/
     transform-origin: right;
     transform: skewY(45deg);
 }
@@ -51,7 +51,7 @@ ul li {
     z-index: var(--i);
     transition: .5s;
     box-shadow: 0px 0px 5px #fff;
-    /*Устанавливает эффект перехода между двумя состояниями элемента*/
+    /*    Устанавливает эффект перехода между двумя состояниями элемента*/
 }
 
 ul li:hover {
@@ -113,7 +113,8 @@ ul li:last-child::after {
     box-shadow: -100px 100px 20px rgb(10, 10, 10, .25)
 }
 
-
+/*Анимация иконки лица*/
+/*---------------------------------------------------------------------------------------------------*/
 /*
 .scan {
     position: absolute;
@@ -189,3 +190,65 @@ ul li:last-child::after {
     transform: skewY(-15deg);
 }
 */
+
+/*Анимация куба*/
+/*---------------------------------------------------------------------------------------------------*/
+.cube {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: anim 20s linear infinite;
+    transform: rotateX(-20deg) rotateY(25deg);
+}
+
+@keyframes anim {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateX(-20deg) rotateY(0deg)
+    }
+}
+
+.cube .big span {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--clr);
+    transform: rotateY(calc(90deg * var(--in))) translateZ(300px);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    box-shadow: 0px 0px 30px #a06f00;
+}
+
+.cube .big span {
+    background: transparent;
+    border: 10px solid #ffa20d;
+}
+
+.cube .big span.top {
+    transform: rotateX(90deg)translateZ(300px);
+}
+
+.cube .big span.bottom {
+    transform: rotateX(90deg)translateZ(-300px);
+}
+
+.cube .big span.top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateZ(-650px);
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(60px);
+}
