@@ -32,9 +32,9 @@ ul {
 
 ul li img {
     position: absolute;
-    top: 5;
+    top: 5px;
     left: -35px;
-    bottom: 10px;
+/*    bottom: 10px;*/
     width: 30px;
     height: 70%;
     /*    --background: #0c3669; -- Почему тут не нужна данная строчка? */
