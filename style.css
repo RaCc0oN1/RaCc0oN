@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 300;
+    /*  font-display: swap;*/
+    src: url(s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4TbMPrQ.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: comfortaa, cursive;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*Единица vh соответствует 1% от высоты области просмотра браузера, таким образом, 100vh равно всей высоте области просмотра. */
+    background: linear-gradient(to bottom right, #162947, #0c1628)
+}
+
+ul {
+    position: relative;
+    transform: skewY(-15deg)
+        /*        Единица deg - определяет угол в градусах.*/
+}
+
+ul li img {
+    position: absolute;
+    top: 5px;
+    left: -35px;
+    bottom: 10px;
+    width: 30px;
+    height: 70%;
+    /*    --background: #0c3669; -- Почему тут не нужна данная строчка?*/
+    transform-origin: right;
+    transform: skewY(45deg);
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 250px;
+    background: #0f4382;
+    padding: 15px;
+    z-index: var(--i);
+    transition: .5s;
+    box-shadow: 0px 0px 5px #fff;
+    /*    Устанавливает эффект перехода между двумя состояниями элемента*/
+}
+
+ul li:hover {
+    background: #0f52a4;
+    transform: translateX(-85px);
+    box-shadow: inset 0 0 50px #0f52a4, inset 20px 0 80px #096de9, inset -20px 0 80px #0f52a4, inset 20px 0 300px #096de9, inset -20px 0 300px #0f52a4, 0 0 50px #0f52a4, -10px 0 80px #096de9, 10px 0 80px #0f52a4;
+}
+
+ul li:hover::before {
+    background: #0f52a4;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+ul li:hover::after {
+    background: #0f52a4;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #0c3669;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: .5s;
+    box-shadow: 0px 0px 1px #fff;
+}
+
+ul li::after {
+    content: " ";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #0f4382;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: .5s
+}
+
+ul li a {
+    text-decoration: none;
+    color: #b7b7b7;
+    display: block;
+    letter-spacing: .05em;
+    transition: .5s;
+}
+
+ul li:hover a {
+    color: #ffffff;
+}
+
+ul li:last-child::after {
+    box-shadow: -100px 100px 20px rgb(10, 10, 10, .25)
+}
+
+/*Анимация иконки лица*/
+/*---------------------------------------------------------------------------------------------------*/
+/*
+.scan {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scan .face {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: url(images/face.png);
+    background-size: 100px;
+}
+
+.scan .face::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/face2.png);
+    background-size: 100px;
+    animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+}
+
+.scan .face::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #32c2b9;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #32c2b9) drop-shadow(0 0 60px #32c2b9);
+    animation: animate_line 3s ease-in-out infinite;
+}
+
+@keyframes animate_line {
+
+    0%,
+    100% {
+        top: 0%;
+    }
+
+    50% {
+        top: 100%;
+    }
+}
+
+.scan h3 {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #ffff;
+    letter-spacing: 2px;
+    margin-top: 0px;
+    transform: skewY(-15deg);
+}
+*/
+
+/*Анимация куба*/
+/*---------------------------------------------------------------------------------------------------*/
+.cube {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: anim 20s linear infinite;
+    transform: rotateX(-20deg) rotateY(25deg);
+}
+
+@keyframes anim {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateX(-20deg) rotateY(0deg)
+    }
+}
+
+.cube .big span {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--clr);
+    transform: rotateY(calc(90deg * var(--in))) translateZ(300px);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    box-shadow: 0px 0px 30px #a06f00;
+}
+
+.cube .big span {
+    background: transparent;
+    border: 10px solid #ffa20d;
+}
+
+.cube .big span.top {
+    transform: rotateX(90deg)translateZ(300px);
+}
+
+.cube .big span.bottom {
+    transform: rotateX(90deg)translateZ(-300px);
+}
+
+.cube .big span.top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateZ(-650px);
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(60px);
+}
