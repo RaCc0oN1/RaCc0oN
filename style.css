@@ -30,6 +30,11 @@ ul {
         /*        Единица deg - определяет угол в градусах.*/
 }
 
+ul.second {
+    position: relative;
+    left: 15vh;
+    transform: skewY(-15deg)
+}
 ul li img {
     position: absolute;
     top: 5px;
@@ -193,6 +198,7 @@ ul li:last-child::after {
 
 /*Анимация куба*/
 /*---------------------------------------------------------------------------------------------------*/
+/*
 .cube {
     position: absolute;
     width: 600px;
@@ -252,3 +258,4 @@ ul li:last-child::after {
     background: rgba(0, 0, 0, 0.5);
     filter: blur(60px);
 }
+*/
